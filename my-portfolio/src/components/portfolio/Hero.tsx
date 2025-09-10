@@ -44,7 +44,7 @@ const Hero = () => {
               className="bg-white/10 border-white/30 text-white hover:bg-white/20 shadow-warm transition-3d button-3d hover-lift"
               asChild
             >
-              <a href="/Resume.pdf" download="Aradhya_Pandey_Resume.pdf">
+              <a href="https://drive.google.com/file/d/17fmWCrzHqxMwN1NgNmlLbfYTcQt8zOyl/view?usp=sharing" download="Aradhya_Pandey_Resume.pdf">
                 <FileText className="mr-2 h-5 w-5" />
                 View Resume
               </a>
