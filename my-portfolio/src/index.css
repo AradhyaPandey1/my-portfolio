@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Coffee Cottagecore Maximalist Design System 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Coffee & Cottagecore Color Palette */
+    --background: 35 15% 96%;
+    --foreground: 25 45% 15%;
+
+    --card: 30 25% 92%;
+    --card-foreground: 25 45% 15%;
+
+    --popover: 30 25% 92%;
+    --popover-foreground: 25 45% 15%;
+
+    /* Rich Coffee Brown Primary */
+    --primary: 25 45% 25%;
+    --primary-foreground: 35 35% 95%;
+
+    /* Warm Cream Secondary */
+    --secondary: 40 30% 85%;
+    --secondary-foreground: 25 45% 25%;
+
+    /* Sage Green Muted */
+    --muted: 85 20% 80%;
+    --muted-foreground: 85 25% 35%;
+
+    /* Burnt Orange Accent */
+    --accent: 25 75% 55%;
+    --accent-foreground: 35 35% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 35 35% 95%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 88%;
+    --ring: 25 45% 25%;
+
+    --radius: 0.75rem;
+
+    /* Coffee Cottagecore Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(25 45% 25%), hsl(25 75% 55%));
+    --gradient-cream: linear-gradient(180deg, hsl(40 30% 92%), hsl(35 25% 85%));
+    --gradient-forest: linear-gradient(135deg, hsl(85 25% 35%), hsl(120 30% 40%));
+    --gradient-coffee: linear-gradient(145deg, hsl(25 45% 25%), hsl(20 35% 35%), hsl(25 75% 55%));
+    
+    /* Rich Shadows */
+    --shadow-warm: 0 8px 32px hsl(25 45% 25% / 0.15);
+    --shadow-deep: 0 12px 40px hsl(25 45% 25% / 0.25);
+    --shadow-glow: 0 0 30px hsl(25 75% 55% / 0.3);
+    
+  /* Smooth Transitions */
+  --transition-warm: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-3d: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  /* 3D Transform Variables */
+  --transform-hover: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.05);
+  --transform-card: perspective(1000px) rotateX(2deg) translateZ(20px);
+  --transform-float: translateY(-10px) rotateZ(1deg) scale(1.02);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom Coffee Cottagecore Styles */
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .bg-gradient-cream {
+    background: var(--gradient-cream);
+  }
+  
+  .bg-gradient-forest {
+    background: var(--gradient-forest);
+  }
+  
+  .bg-gradient-coffee {
+    background: var(--gradient-coffee);
+  }
+  
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+  
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-warm {
+    transition: var(--transition-warm);
+  }
+  
+  .transition-3d {
+    transition: var(--transition-3d);
+  }
+  
+  /* 3D Effect Classes */
+  .transform-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .hover-lift {
+    transition: var(--transition-3d);
+    transform: perspective(1000px) translateZ(0);
+  }
+  
+  .hover-lift:hover {
+    transform: var(--transform-hover);
+    box-shadow: var(--shadow-glow), 0 25px 50px hsl(25 45% 25% / 0.3);
+  }
+  
+  .card-3d {
+    transform: var(--transform-card);
+    transition: var(--transition-3d);
+    transform-style: preserve-3d;
+  }
+  
+  .card-3d:hover {
+    transform: perspective(1000px) rotateX(-2deg) rotateY(8deg) translateZ(40px) scale(1.02);
+  }
+  
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .text-3d {
+    text-shadow: 
+      2px 2px 0px hsl(25 45% 20%),
+      4px 4px 0px hsl(25 45% 15%),
+      6px 6px 10px hsl(25 45% 25% / 0.4);
+  }
+  
+  .button-3d {
+    transform: perspective(1000px) translateZ(0);
+    transition: var(--transition-3d);
+    position: relative;
+  }
+  
+  .button-3d:hover {
+    transform: perspective(1000px) translateZ(20px) rotateX(-5deg);
+  }
+  
+  .button-3d:active {
+    transform: perspective(1000px) translateZ(10px) rotateX(-2deg);
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+    33% { transform: translateY(-10px) rotateZ(1deg); }
+    66% { transform: translateY(-5px) rotateZ(-1deg); }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: perspective(1000px) translateY(100px) rotateX(25deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(1000px) translateY(0) rotateX(0deg);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: perspective(1000px) translateX(-100px) rotateY(25deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(1000px) translateX(0) rotateY(0deg);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: perspective(1000px) translateX(100px) rotateY(-25deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(1000px) translateX(0) rotateY(0deg);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  .stagger-animation {
+    opacity: 0;
+  }
+  
+  .stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+  
+  /* Cottagecore Pattern Backgrounds */
+  .pattern-dots {
+    background-image: radial-gradient(circle, hsl(25 45% 25% / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .pattern-organic {
+    background-image: 
+      radial-gradient(ellipse at top, hsl(25 75% 55% / 0.1), transparent 50%),
+      radial-gradient(ellipse at bottom, hsl(85 25% 35% / 0.1), transparent 50%);
+  }
+
+  /* Typography Enhancements */
+  .text-script {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+  }
+  
+  .text-cozy {
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+}
